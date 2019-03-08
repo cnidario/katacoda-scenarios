@@ -1,0 +1,64 @@
+https://www.ansible.com/blog/six-ways-ansible-makes-docker-compose-better
+Containers are popular for many reasons. One key reason: container images are easy to build and, once built, don't change.
+
+When Developer A says, "Hey, check out this new application, just download this container image and run it," Developer B doesn't have to ask the question, "How do I configure it?"  Developer B can just download the image and run the container, and enjoy a high likelihood that it will run exactly as Developer A intended.
+
+Complexity doesn't go away in the container world; it just moves to different places.
+
+
+- hello world
+- imagenes: build, pull, Dockerfile, multi-stage
+- run, inspect, exec, network, volumes
+- multi container, kubernetes
+
+https://docker-curriculum.com/#what-is-docker-
+
+1. Objetivo: Process isolation.
+OS-level virtualization
+
+Unix v7 - chroot (1979)
+FreeBSD Jails (2000)
+Linux namespaces (2002) cgroups(2007)
+  Mecanismo que particiona los recursos del kernel de modo que un conjunto de procesos ve un conjunto de recursos mientras otro conjunto de procesos ve otro conjunto distinto de recursos
+Aíslan:
+  - mount points
+  - PID's
+  - Network stack
+  - IPC
+  - UTS (host y domain names)
+  - User ID
+  - Cgroups
+
+Docker (2013). Contenedores.
+VM's - alto overhead computacional
+
+Aplicación + entorno. IaC
+Contenedores ofrecen un mecanismo de empaquetado lógico en el cual las aplicaiones pueden ser abstraídas del entorno en que el corren. Este desacoplamiento permite el despliegue fácil y consistente.
+Entornos predecibles que están aislados del resto y pueden correr en cualquier sitio.
+
+1. docker run hello-world
+docker run busybox
+docker run busybox echo "hola desde busybox"
+
+docker container ls
+docker container ls -a
+docker run -it busybox /bin/sh
+    # rm -rf bin
+
+docker container ls
+docker container ls -a
+docker container rm 
+docker container ls -aq
+
+docker container prune
+
+Terminlogía
+Imagen - fotografía de un contenedor, un contenedor congelado en el tiempo ejecutable vs. proceso
+Contenedor - Se crean de una imagen, entornos vivos, docker run
+Demonio de docker
+Cliente de docker
+Docker Hub - registro
+
+
+
+Dockerfile
